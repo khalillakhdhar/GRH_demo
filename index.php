@@ -1,7 +1,13 @@
 <html>
 
 <head>
+    <?php include("./model/employeeCRUD.php");   ?>
     <title>Employees</title>
+    <?php
+
+    ?>
+
+
 </head>
 
 <body>
@@ -49,7 +55,7 @@
                 <td>adresse</td>
                 <td>Grade</td>
                 <td>Salaire</td>
-                <th>CIN</th>
+                <td>CIN</td>
                 <td><a href="#">supprimer</a></td>
             </tr>
 
