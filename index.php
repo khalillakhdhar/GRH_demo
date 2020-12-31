@@ -4,7 +4,8 @@
     <?php include("./model/employeeCRUD.php");   ?>
     <title>Employees</title>
     <?php
-
+    $emp = new Employee();
+    $liste = $emp->list_users();
     ?>
 
 
@@ -14,8 +15,7 @@
     <?php include("header.php"); ?>
     <br><br>
     <!-- Button trigger modal -->
-    <div align="center"> <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#exampleModal">
+    <div align="center"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Ajoutez un employé
         </button>
     </div>
@@ -49,16 +49,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Nom</td>
-                <td>Téléphone</td>
-                <td>adresse</td>
-                <td>Grade</td>
-                <td>Salaire</td>
-                <td>CIN</td>
-                <td><a href="#">supprimer</a></td>
-            </tr>
-
+            <?php
+            while ($row = $liste->fetch_assoc()) {
+            ?>
+                <tr>
+                    <td></td>
+                    <td>Téléphone</td>
+                    <td>adresse</td>
+                    <td>Grade</td>
+                    <td>Salaire</td>
+                    <td>CIN</td>
+                    <td><a href="#">supprimer</a></td>
+                </tr>
+            <?php }
+            ?>
         </tbody>
 
     </table>
